@@ -1,5 +1,5 @@
 import { Header } from "./components/Header"
-import { Post } from './components/Post';
+import { Post, PostProps } from './components/Post';
 import { Sidebar } from "./components/Sidebar";
 
 import './global.css';
@@ -8,8 +8,11 @@ import styles from './App.module.css';
 // author: {avatar_url:"", name:"", role:""}
 // publishedAt: Date
 // content: String
+interface Posts extends PostProps {
+  id: number
+}
 
-const posts = [
+const posts: Posts[] = [
   {
     id: 1,
     author: {
@@ -23,7 +26,6 @@ const posts = [
       { type: 'link', content: 'jane.design/doctorcare' },
     ],
     publishedAt: new Date('2022-07-07 22:00:00'),
-
   },
   {
     id: 2,
